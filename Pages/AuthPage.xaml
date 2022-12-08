@@ -15,11 +15,12 @@
             <RowDefinition Height="34*"/>
         </Grid.RowDefinitions>
         <Frame Content="Frame" Grid.RowSpan="3"/>
-        <TextBox x:Name="Login" HorizontalAlignment="Center" Margin="0,46,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="120" Background="Transparent" Foreground="Lime" BorderBrush="Lime" TextAlignment="Center" Grid.Row="1"/>
-        <TextBox x:Name="Password" HorizontalAlignment="Center" Margin="0,69,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120" Background="Transparent" Foreground="Lime" BorderBrush="Lime" TextAlignment="Center" Grid.Row="1"/>
-        <TextBox x:Name="Confirm_password" HorizontalAlignment="Center" Margin="0,92,0,0" TextWrapping="Wrap" Text="Confirm Password" VerticalAlignment="Top" Width="120" Background="Transparent" Foreground="Lime" BorderBrush="Lime" TextAlignment="Center" Grid.Row="1"/>
+        <TextBox x:Name="Login" HorizontalAlignment="Center" Margin="0,46,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="120" Background="Transparent" Foreground="Lime" BorderBrush="Lime" TextAlignment="Center" Grid.Row="1"  TextChanged="Login_TextChanged"/>
+        <TextBox x:Name="Password" HorizontalAlignment="Center" Margin="0,69,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120" Background="Transparent" Foreground="Lime" BorderBrush="Lime" TextAlignment="Center" Grid.Row="1"  TextChanged="Password_TextChanged"/>
+        <TextBox x:Name="Confirm_password" HorizontalAlignment="Center" Margin="0,92,0,0" TextWrapping="Wrap" Text="Confirm Password" VerticalAlignment="Top" Width="120" Background="Transparent" Foreground="Lime" BorderBrush="Lime" TextAlignment="Center" Grid.Row="1" TextChanged="Confirm_password_TextChanged"/>
         <Image HorizontalAlignment="Center" Height="55" Margin="0,109,0,0" VerticalAlignment="Top" Width="100" Source="/Pages/8bb28a6366f6b141eb0dfe701ed51300.png"/>
         <Button Style="{DynamicResource ButtonStyle}"  HorizontalAlignment="Center" Margin="0,129,0,0" VerticalAlignment="Top" Height="19" Width="120" Content="Regestration" Grid.Row="1" Click="Button_Click"/>
+        <TextBlock x:Name="ErorText"  HorizontalAlignment="Center" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Foreground="Red" TextAlignment="Center"/>
 
     </Grid>
 </Page>

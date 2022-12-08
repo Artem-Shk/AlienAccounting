@@ -33,8 +33,8 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="login" Type="nvarchar(max)" Nullable="false" />
           <Property Name="password" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="email" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="gender" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="email" Type="nvarchar(max)" />
+          <Property Name="gender" Type="nvarchar(max)" />
         </EntityType>
         <Association Name="FK_UserGender">
           <End Role="UserSet" Type="Self.UserSet" Multiplicity="1" />
@@ -105,8 +105,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="login" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="gender" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="gender" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Gender" Relationship="DataModel.UserGender" FromRole="User" ToRole="Gender" />
           <NavigationProperty Name="Role" Relationship="DataModel.UserRole" FromRole="User" ToRole="Role" />
         </EntityType>
