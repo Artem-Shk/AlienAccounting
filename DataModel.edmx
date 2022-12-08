@@ -4,77 +4,77 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="currencySet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-        </EntityType>
-        <EntityType Name="GenderSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserId" Type="int" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
-        <EntityType Name="RoleSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="UserSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="login" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="password" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="email" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="gender" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_UserGender">
-          <End Role="UserSet" Type="Self.UserSet" Multiplicity="1" />
-          <End Role="GenderSet" Type="Self.GenderSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="GenderSet">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UserRole">
-          <End Role="UserSet" Type="Self.UserSet" Multiplicity="1" />
-          <End Role="RoleSet" Type="Self.RoleSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="RoleSet">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="DataModelStoreContainer">
-          <EntitySet Name="currencySet" EntityType="Self.currencySet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="GenderSet" EntityType="Self.GenderSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="RoleSet" EntityType="Self.RoleSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UserSet" EntityType="Self.UserSet" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_UserGender" Association="Self.FK_UserGender">
-            <End Role="UserSet" EntitySet="UserSet" />
-            <End Role="GenderSet" EntitySet="GenderSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserRole" Association="Self.FK_UserRole">
-            <End Role="UserSet" EntitySet="UserSet" />
-            <End Role="RoleSet" EntitySet="RoleSet" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DataModelStoreContainer">
+    <EntitySet Name="currencySet" EntityType="DataModel.Store.currencySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserSet" EntityType="DataModel.Store.UserSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GenderSet" EntityType="DataModel.Store.GenderSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RoleSet" EntityType="DataModel.Store.RoleSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UserGender" Association="DataModel.Store.UserGender">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Gender" EntitySet="GenderSet" />
+    </AssociationSet>
+    <AssociationSet Name="UserRole" Association="DataModel.Store.UserRole">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Role" EntitySet="RoleSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="currencySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="login" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="gender" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="GenderSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoleSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="UserGender">
+    <End Role="User" Type="DataModel.Store.UserSet" Multiplicity="1" />
+    <End Role="Gender" Type="DataModel.Store.GenderSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Gender">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserRole">
+    <End Role="User" Type="DataModel.Store.UserSet" Multiplicity="1" />
+    <End Role="Role" Type="DataModel.Store.RoleSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Role">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
@@ -105,8 +105,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="login" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="gender" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="gender" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Gender" Relationship="DataModel.UserGender" FromRole="User" ToRole="Gender" />
           <NavigationProperty Name="Role" Relationship="DataModel.UserRole" FromRole="User" ToRole="Role" />
         </EntityType>

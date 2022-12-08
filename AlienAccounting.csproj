@@ -88,6 +88,7 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Workers\AlienDataWorker.cs" />
+    <Compile Include="Workers\CheckModel.cs" />
     <Compile Include="Workers\RegisterManager.cs" />
     <Page Include="Pages\LoginPage.xaml">
       <SubType>Designer</SubType>
