@@ -59,33 +59,34 @@ namespace AlienAccounting.Workers
     public  class ErorManager
     {   
 
-        public  string ErorHandler(string login, string password, string confirmed_password)
+        //public  string ErorHandler(string login, string password, string confirmed_password)
+        //{
+        //    Debug.WriteLine("check succes");
+        //    if (Check_passsword(password, confirmed_password) == null)
+        //    {
+        //        Debug.WriteLine(password + " " + confirmed_password);
+        //        return "ConfPassError";
+        //    }
+        //    else
+        //    {
+        //        Debug.WriteLine(password + " " + confirmed_password+"11");
+        //        if (Check_UserDs(login) == null)
+        //        {
+        //            return "LoginExistEror";
+        //        }
+        //        else
+        //        {
+        //            return "Ok";
+        //        }
+        //    }
+        //}
+        
+        public string Check_passsword(string password, string confirmed_password)
         {
             Debug.WriteLine("check succes");
-            if (Check_passsword(password, confirmed_password) == null)
+            if (String.Compare(password,confirmed_password)!=0)
             {
-                Debug.WriteLine(password + " " + confirmed_password);
                 return "ConfPassError";
-            }
-            else
-            {
-                Debug.WriteLine(password + " " + confirmed_password+"11");
-                if (Check_UserDs(login) == null)
-                {
-                    return "LoginExistEror";
-                }
-                else
-                {
-                    return "Ok";
-                }
-            }
-        }
-        private string Check_passsword(string password, string confirmed_password)
-        {
-            Debug.WriteLine("check succes");
-            if (String.Compare(password,confirmed_password)==0)
-            {
-                return "confirmed";
             }
             else
             {
@@ -95,10 +96,15 @@ namespace AlienAccounting.Workers
 
         }
 
-        private  string Check_UserDs(string login)
+        public  string Check_UserDs(string login)
         {
             Debug.WriteLine("login eror");
-            return RegDataContainer.data_worker.By_login(login).login;
+            if (RegDataContainer.data_worker.By_login(login) != null)
+            {
+                return "Login_same_eror";
+            }
+                
+            return "ok";
         }
 
     }
