@@ -52,6 +52,10 @@ namespace AlienAccounting.Workers
             Debug.WriteLine("by login +");
             return UserSet.FirstOrDefault(c=>c.login==login);
         }
-
+        public  List<User> TakeAllUsers()
+        {
+            
+            return UserSet.ToList();
+        }
         }
 }

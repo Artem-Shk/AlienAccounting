@@ -19,11 +19,11 @@ namespace AlienAccounting.Pages
     {   
         private bool IsEror = true;
         private ErorManager erorHandler = new ErorManager();
-        private string password  { get;
-                                                }
+       
         public AuthPage()
         {
             InitializeComponent();
+            
             
         }
 
@@ -31,9 +31,9 @@ namespace AlienAccounting.Pages
         {
            
             if (IsEror == false ) {
-                RegisterManager register = new RegisterManager(this.Login.Text, this.password.Text, this.Confirm_password.Text);
+                RegisterManager register = new RegisterManager(this.Login.Text, this.Password.Text, this.Confirm_password.Text);
                 register.Register();
-                this.NavigationService.Navigate(new WelcomePage());
+                this.NavigationService.Navigate(new WorkPage());
             }
             
                 
@@ -45,11 +45,14 @@ namespace AlienAccounting.Pages
 
         private void Login_TextChanged(object sender, TextChangedEventArgs e)
         {
-           
-            if (!String.IsNullOrWhiteSpace(this.Login.Text))
+           if(Login != null & ErorText != null)
             {
-                Debug.WriteLine("Login_TextChanged+");
-                if (erorHandler.ErorHandler(this.Login.Text, this.Password.Text, this.Confirm_password.Text) == "LoginExistEror")
+                if (!String.IsNullOrWhiteSpace(Login.Text))
+                {
+                    Debug.WriteLine("Login_TextChanged+");
+                }
+                    
+                if (erorHandler.Check_UserDs(this.Login.Text) == "Login_same_eror")
                 {
                     Debug.WriteLine("Log_error+");
                     this.Login.BorderBrush = Brushes.Red;
@@ -63,43 +66,60 @@ namespace AlienAccounting.Pages
                     IsEror = false;
                 }
             }
+            
+            
                 
         }
 
         private void Password_TextChanged(object sender, TextChangedEventArgs e)
         {
             Debug.WriteLine("password_TextChanged");
-            if (erorHandler.ErorHandler(this.Login.Text, this.Password.Text, this.Confirm_password.Text) == "LoginExistEror")
+            if (Password != null & ErorText != null)
             {
-                Debug.WriteLine("Pass errore");
-                this.Confirm_password.BorderBrush = Brushes.Red;
-                this.ErorText.Text = "Password is not same";
-                IsEror = true;
+                if (erorHandler.Check_passsword(Password.Text, Confirm_password.Text) == "ConfPassError")
+                {
+                    Debug.WriteLine("Pass errore");
+                    this.Password.BorderBrush = Brushes.Red;
+                    this.ErorText.Text = "Password is not same";
+                    IsEror = true;
+                }
+                else
+                {
+                    this.Password.BorderBrush = Brushes.Lime;
+                    this.Confirm_password.BorderBrush = Brushes.Lime;
+                    this.ErorText.Text = "";
+                    IsEror = false;
+                }
             }
-            else
-            {
-                this.Confirm_password.BorderBrush = Brushes.Lime;
-                this.ErorText.Text = "";
-                IsEror = false;
-            }
+                
         }
 
         private void Confirm_password_TextChanged(object sender, TextChangedEventArgs e)
         {
             Debug.WriteLine("Confirm_password_LostFocus+");
-            if (erorHandler.ErorHandler(this.Login.Text, this.Password.Text, this.Confirm_password.Text) == "LoginExistEror")
+            if (Confirm_password != null & ErorText != null)
             {
-                Debug.WriteLine("pass eror");
-                this.Confirm_password.BorderBrush = Brushes.Red;
-                this.ErorText.Text = "Password is not same";
-                IsEror = true;
+                if (erorHandler.Check_passsword(Password.Text, Confirm_password.Text) == "ConfPassError")
+                {
+                    Debug.WriteLine("pass eror");
+                    this.Confirm_password.BorderBrush = Brushes.Red;
+                    this.ErorText.Text = "Password is not same";
+                    IsEror = true;
+                }
+                else
+                {
+                    this.Confirm_password.BorderBrush = Brushes.Lime;
+                    this.Password.BorderBrush = Brushes.Lime;
+                    this.ErorText.Text = "";
+                    IsEror = false;
+                }
             }
-            else
-            {
-                this.Confirm_password.BorderBrush = Brushes.Lime;
-                this.ErorText.Text = "";
-                IsEror = false;
-            }
+                
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

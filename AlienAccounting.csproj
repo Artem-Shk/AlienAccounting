@@ -67,6 +67,9 @@
     <Compile Include="currency.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\DataGridStyleLabotary.xaml.cs">
+      <DependentUpon>DataGridStyleLabotary.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -81,6 +84,9 @@
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\WorkPage.xaml.cs">
+      <DependentUpon>WorkPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Role.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -90,6 +96,10 @@
     <Compile Include="Workers\AlienDataWorker.cs" />
     <Compile Include="Workers\CheckModel.cs" />
     <Compile Include="Workers\RegisterManager.cs" />
+    <Page Include="CustomControls\DataGridStyleLabotary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -124,6 +134,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\AuthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WorkPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
