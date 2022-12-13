@@ -1,4 +1,5 @@
 ﻿using AlienAccounting.Workers;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -28,10 +29,10 @@ namespace AlienAccounting.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            RegisterManager registerManager = new RegisterManager();
-            string password = registerManager.Check_passsword(this.Confirm_password.Text, this.Password.Text);
-            if (password != null ) {
-                registerManager.Login(this.Login.Text, password);
+           
+            if (IsEror == false ) {
+                RegisterManager register = new RegisterManager(this.Login.Text, this.password.Text, this.Confirm_password.Text);
+                register.Register();
                 this.NavigationService.Navigate(new WelcomePage());
             }
             
