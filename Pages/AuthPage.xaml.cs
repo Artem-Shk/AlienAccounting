@@ -28,12 +28,10 @@ namespace AlienAccounting.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (IsEror == false) 
-            {
-                Debug.WriteLine("Button_Click+");
-                RegisterManager registerManager = new RegisterManager(this.Login.Text, this.Password.Text, this.Confirm_password.Text);
-                
-                registerManager.Register();
+            RegisterManager registerManager = new RegisterManager();
+            string password = registerManager.Check_passsword(this.Confirm_password.Text, this.Password.Text);
+            if (password != null ) {
+                registerManager.Login(this.Login.Text, password);
                 this.NavigationService.Navigate(new WelcomePage());
             }
             
