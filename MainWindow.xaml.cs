@@ -23,6 +23,7 @@ namespace AlienAccounting
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }

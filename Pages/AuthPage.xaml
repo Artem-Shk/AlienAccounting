@@ -56,7 +56,7 @@
                     </VisualBrush.Visual>
                 </VisualBrush>
             </Style.Resources>
-             
+
         </Style>
         <Style x:Key="ConfirmPasswordTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource LoginTextBoxStyle}" >
             <Style.Resources>
@@ -66,42 +66,43 @@
                     </VisualBrush.Visual>
                 </VisualBrush>
             </Style.Resources>
-            
+
         </Style>
     </Page.Resources>
 
     <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="237*"/>
-            <RowDefinition Height="179*"/>
-            <RowDefinition Height="34*"/>
+            <RowDefinition Height="267*"/>
+            <RowDefinition Height="158*"/>
+            <RowDefinition Height="25*"/>
         </Grid.RowDefinitions>
-        
-        <Frame Content="Frame" Grid.RowSpan="3"/>
-        
+
+        <Label x:Name="login_hint" Content="Already have acount?"
+               HorizontalAlignment="Center"
+               Margin="0,122,0,0"
+               VerticalAlignment="Top"
+               Height="37"
+               Foreground="LimeGreen" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseDown="Label_MouseDown" Width="150" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" Grid.Row="1"/>
+
+
         <TextBox x:Name="Login" 
-                 Margin="0,46,0,0"
+                 Margin="0,15,0,0"
                  Style="{DynamicResource LoginTextBoxStyle}"
-                 VerticalAlignment="Top" 
-                 Grid.Row="1"
-                 TextChanged="Login_TextChanged" />
-        
+                 TextChanged="Login_TextChanged" Height="17" Width="120" Grid.Row="1" />
+
         <TextBox x:Name="Password"  
                   Style="{DynamicResource PasswordTextBoxStyle}"
-                 Margin="0,69,0,0" 
-                 Grid.Row="1"
+                 Margin="0,38,0,0"
                 
-                 TextChanged="Password_TextChanged" Foreground="Lime"/>
-                 
+                 TextChanged="Password_TextChanged" Foreground="Lime" Height="17" Width="120" Grid.Row="1"/>
+
         <TextBox x:Name="Confirm_password"
                  Style="{DynamicResource ConfirmPasswordTextBoxStyle}" 
-                 Margin="0,92,0,0" 
-                 Grid.Row="1" 
-                 TextChanged="Confirm_password_TextChanged"/>
+                 TextChanged="Confirm_password_TextChanged" Height="17" Width="120" Margin="0,62,0,0" Grid.Row="1"/>
         <Image HorizontalAlignment="Center" Height="55" Margin="0,109,0,0" VerticalAlignment="Top" Width="100" Source="/Pages/8bb28a6366f6b141eb0dfe701ed51300.png"/>
-        <Button Style="{DynamicResource ButtonStyle}"  HorizontalAlignment="Center" Margin="0,129,0,0" VerticalAlignment="Top" Height="19" Width="120" Content="Regestration" Grid.Row="1" Click="Button_Click"/>
-        <TextBlock x:Name="ErorText"  HorizontalAlignment="Center" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Foreground="Red" TextAlignment="Center"/>
-        
+        <Button Style="{DynamicResource ButtonStyle}"  HorizontalAlignment="Center" Margin="0,98,0,0" VerticalAlignment="Top" Height="19" Width="120" Content="Regestration" Click="Button_Click" Grid.Row="1"/>
+        <TextBlock x:Name="ErorText"  HorizontalAlignment="Center" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Foreground="Red" TextAlignment="Center" Height="16"/>
+
 
     </Grid>
 </Page>

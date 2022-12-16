@@ -191,7 +191,6 @@
     <Resource Include="Pages\8bb28a6366f6b141eb0dfe701ed51300.png" />
     <Resource Include="d0c5c0d841dfe9dcaa1281df6f064b6e.png" />
     <Resource Include="8bb28a6366f6b141eb0dfe701ed51300.png" />
-    <Resource Include="99118bd6103b00beeec1e0388714101a.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

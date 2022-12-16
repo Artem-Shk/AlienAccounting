@@ -109,14 +109,11 @@
             <Setter Property="CellStyle">
                 <Setter.Value>
                     <Style BasedOn="{StaticResource {x:Type DataGridCell}}" TargetType="{x:Type DataGridCell}" >
-                        
+
                     </Style>
 
                 </Setter.Value>
             </Setter>
-
-
-            
         </Style>
     </Page.Resources>
     <Grid Style="{StaticResource GridStyle}" >

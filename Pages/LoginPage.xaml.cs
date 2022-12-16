@@ -24,5 +24,10 @@ namespace AlienAccounting.Pages
         {
             InitializeComponent();
         }
+
+        private void register_hint_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.NavigationService.Navigate(new AuthPage());
+        }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Navigation;
 
 namespace AlienAccounting.Pages
 {
@@ -19,6 +21,9 @@ namespace AlienAccounting.Pages
     {   
         private bool IsEror = true;
         private ErorManager erorHandler = new ErorManager();
+        public MainWindow parent { get {
+                return (MainWindow)Window.GetWindow(this);
+            } set { } }
        
         public AuthPage()
         {
@@ -117,9 +122,19 @@ namespace AlienAccounting.Pages
                 
         }
 
+        private void Custom_Nav()
+        {
+            this.parent.main_frame.Source = new Uri("LoginPage.xaml",UriKind.Relative);
+        }
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Label_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            Custom_Nav();
         }
     }
 }
