@@ -23,7 +23,9 @@ namespace AlienAccounting
     {
         public WelcomePage()
         {
+            ShowsNavigationUI = false;
             InitializeComponent();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

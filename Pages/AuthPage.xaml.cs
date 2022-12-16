@@ -27,9 +27,10 @@ namespace AlienAccounting.Pages
        
         public AuthPage()
         {
+            ShowsNavigationUI = false;
             InitializeComponent();
             
-            
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -122,19 +123,17 @@ namespace AlienAccounting.Pages
                 
         }
 
-        private void Custom_Nav()
-        {
-            this.parent.main_frame.Source = new Uri("LoginPage.xaml",UriKind.Relative);
-        }
+
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
+
         private void Label_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            Custom_Nav();
+            this.NavigationService.Navigate(new LoginPage());
         }
     }
 }

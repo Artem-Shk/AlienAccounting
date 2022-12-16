@@ -22,11 +22,14 @@ namespace AlienAccounting.Pages
     {
         public LoginPage()
         {
+            ShowsNavigationUI = false;
             InitializeComponent();
+            
         }
 
         private void register_hint_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            
             this.NavigationService.Navigate(new AuthPage());
         }
     }

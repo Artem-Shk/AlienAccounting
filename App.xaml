@@ -17,10 +17,10 @@
 
             <Setter Property="Effect" Value="{DynamicResource dropShadow}"></Setter>
         </Style>
-       
-      
- 
         
-            
+
+
+
+
     </Application.Resources>
 </Application>

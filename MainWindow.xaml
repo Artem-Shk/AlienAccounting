@@ -9,7 +9,12 @@
         Title="MainWindow" Height="450" Width="800">
         
     <Grid>
-        <Frame x:Name="main_frame" Source="/Pages/LoginPage.xaml"></Frame>
+        <Frame  x:Name="main_frame"
+                Source="/Pages/WelcomePage.xaml"
+                NavigationUIVisibility="Hidden" 
+                >
+
+        </Frame>
         
     </Grid>
 </Window>

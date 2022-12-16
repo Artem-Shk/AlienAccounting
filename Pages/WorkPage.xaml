@@ -117,7 +117,7 @@
         </Style>
     </Page.Resources>
     <Grid Style="{StaticResource GridStyle}" >
-        <DataGrid x:Name="userDataGrid" Style="{StaticResource DataGridStyle}" ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,203">
+        <DataGrid x:Name="userDataGrid" Style="{StaticResource DataGridStyle}" Margin="0,0,0,203">
            
         </DataGrid>
         
