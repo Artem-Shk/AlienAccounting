@@ -11,53 +11,13 @@
       Title="AuthPage"
       xmlns:System="clr-namespace:System;assembly=mscorlib">
     <Page.Resources>
-        <Thickness x:Key="TextBoxBorderThickness">0,0,0,1</Thickness>
+        
         <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
         <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
         <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
 
-        <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" x:Key="LoginTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
-            <Style.Resources>
-                <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
-                    <VisualBrush.Visual>
-                        <Label Content="Login" Foreground="LimeGreen"/>
-                    </VisualBrush.Visual>
-                </VisualBrush>
-            </Style.Resources>
-            <Style.Triggers>
-                <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
-                    <Setter Property="Background" Value="{DynamicResource CueBannerBrush}" />
-                </Trigger>
-                <Trigger Property="Text" Value="{x:Null}">
-                    <Setter Property="Background" Value="{DynamicResource CueBannerBrush}" />
-                </Trigger>
-                <Trigger Property="IsKeyboardFocused" Value="True">
-                    <Setter Property="Background" Value="Transparent" />
-                </Trigger>
-            </Style.Triggers>
-            <Style.Setters>
-                <Setter Property="TextWrapping" Value="Wrap"></Setter>
-                <Setter Property="BorderBrush"  Value="Lime"></Setter>
-                <Setter Property="BorderThickness" Value="{StaticResource TextBoxBorderThickness}"></Setter>
-                <Setter Property="Text" Value=""></Setter>
-                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-                <Setter Property="Width" Value="120"></Setter>
-                <Setter Property="Foreground" Value="Lime"></Setter>
-                <Setter Property="VerticalAlignment" Value="Top"></Setter>
-                <Setter Property="Background" Value="Transparent"></Setter>
-
-            </Style.Setters>
-        </Style>
-        <Style x:Key="PasswordTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource LoginTextBoxStyle}">
-            <Style.Resources>
-                <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
-                    <VisualBrush.Visual>
-                        <Label Content="Password" Foreground="LimeGreen"/>
-                    </VisualBrush.Visual>
-                </VisualBrush>
-            </Style.Resources>
-
-        </Style>
+       
+        
         <Style x:Key="ConfirmPasswordTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource LoginTextBoxStyle}" >
             <Style.Resources>
                 <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">

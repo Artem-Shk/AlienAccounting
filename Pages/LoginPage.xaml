@@ -14,17 +14,21 @@
             <RowDefinition Height="153*"/>
             <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="Login" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="120" Background="Transparent" Foreground="Lime" BorderBrush="Lime" TextAlignment="Center" Grid.Row="1" Height="18"/>
+        <TextBox x:Name="Login"
+                 Style="{DynamicResource LoginTextBoxStyle}" 
+                 Grid.Row="1" Margin="0,10,0,0" />
         <Image HorizontalAlignment="Center" Height="55" Margin="0,109,0,0" VerticalAlignment="Top" Width="100" Source="/Pages/8bb28a6366f6b141eb0dfe701ed51300.png"/>
         <Button Content="Login" Style="{DynamicResource ButtonStyle}" Margin="327,108,327,10" Grid.Row="1"></Button>
-        <TextBox x:Name="Password"  HorizontalAlignment="Center" Margin="0,43,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120" Background="Transparent" Foreground="Lime" BorderBrush="Lime" TextAlignment="Center" Grid.Row="1" Height="18"/>
+        <TextBox x:Name="Password"
+                 Style="{DynamicResource PasswordTextBoxStyle}" Margin="0,44,0,0" Grid.Row="1"
+                />
 
         <Label x:Name="register_hint"
                Content="Don'have account?"
                HorizontalAlignment="Center"
                Margin="0,66,0,0"
                VerticalAlignment="Top"
-               Foreground="Lime"
+               Foreground="LimeGreen"
                MouseDown="register_hint_MouseDown"
                Grid.Row="1" Height="26"
                Width="110">
@@ -45,5 +49,6 @@
                 </Style>
             </Label.Style>
         </Label>
+        
     </Grid>
 </Page>

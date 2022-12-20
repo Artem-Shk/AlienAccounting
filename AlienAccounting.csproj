@@ -95,6 +95,7 @@
     </Compile>
     <Compile Include="Workers\AlienDataWorker.cs" />
     <Compile Include="Workers\CheckModel.cs" />
+    <Compile Include="Workers\DBPreloader.cs" />
     <Compile Include="Workers\RegisterManager.cs" />
     <Page Include="CustomControls\DataGridStyleLabotary.xaml">
       <SubType>Designer</SubType>

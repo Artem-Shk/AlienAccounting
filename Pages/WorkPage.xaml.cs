@@ -1,6 +1,7 @@
 ﻿using AlienAccounting.Workers;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,14 +23,22 @@ namespace AlienAccounting.Pages
     public partial class WorkPage : Page
     {
 
-        public List<User> UserData { get; set; }
+        AlienDataWorker Workers = new AlienDataWorker();
         public WorkPage()
         {
-            AlienDataWorker Workers = new AlienDataWorker();
-            this.UserData = Workers.UserSet.ToList();
-
+            List<User> UserData = Workers.UserSet.ToList();
+            
+            
             InitializeComponent();
             userDataGrid.ItemsSource = UserData;
+            Workers.UserSet.Load();
+           
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Workers.SaveChanges();
+            
         }
     }
 }

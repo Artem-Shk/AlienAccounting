@@ -30,7 +30,8 @@ namespace AlienAccounting
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AuthPage());
+            //this.NavigationService.Navigate(new AuthPage());
+            this.NavigationService.Navigate(new WorkPage());
         }
     }
 }
