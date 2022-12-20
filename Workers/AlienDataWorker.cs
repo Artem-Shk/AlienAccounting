@@ -54,7 +54,7 @@ namespace AlienAccounting.Workers
         }
         public  List<User> TakeAllUsers()
         {
-            
+
             return UserSet.ToList();
         }
         }

@@ -64,11 +64,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BodyParts.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="currency.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\DataGridStyleLabotary.xaml.cs">
       <DependentUpon>DataGridStyleLabotary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\loadingElem.xaml.cs">
+      <DependentUpon>loadingElem.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataModel.cs">
       <AutoGen>True</AutoGen>
@@ -98,6 +104,10 @@
     <Compile Include="Workers\DBPreloader.cs" />
     <Compile Include="Workers\RegisterManager.cs" />
     <Page Include="CustomControls\DataGridStyleLabotary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\loadingElem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -10,6 +10,5 @@ namespace AlienAccounting.Workers
     internal class DBPreloader
     {
         public static DataModelContainer DbContext = new DataModelContainer();
-        public static 
     }
 }
