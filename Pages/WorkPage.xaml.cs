@@ -1,4 +1,5 @@
-﻿using AlienAccounting.Workers;
+﻿using AlienAccounting.Models;
+using AlienAccounting.Workers;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static AlienAccounting.Workers.DbControllerSoul;
 
 namespace AlienAccounting.Pages
 {
@@ -23,21 +25,28 @@ namespace AlienAccounting.Pages
     public partial class WorkPage : Page
     {
 
-        AlienDataWorker Workers = new AlienDataWorker();
+        private DBController dBController
+        {
+            get; set;
+        } = new DBController();
+
+        public List<User> UserModel { get {
+                return dBController.Users;
+            } set { } } 
+
+    
+
+    
+
         public WorkPage()
         {
-            List<User> UserData = Workers.UserSet.ToList();
-            
-            
+
             InitializeComponent();
-            userDataGrid.ItemsSource = UserData;
-            Workers.UserSet.Load();
-           
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Workers.SaveChanges();
             
         }
     }

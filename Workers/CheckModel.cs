@@ -16,19 +16,7 @@ namespace AlienAccounting.Workers
             
 
 
-            foreach (PropertyInfo item in typeof(DataModelContainer).GetProperties())
-                {
-
-                if (item.PropertyType.GetTypeInfo().IsGenericType)
-                {
-                    
-                    Debug.WriteLine("types are taked" + item.PropertyType.GetTypeInfo().GenericTypeArguments[0].ToString());
-                }
-                
-
-
-
-            }
+            
         }
 
     }

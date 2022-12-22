@@ -7,7 +7,7 @@
              mc:Ignorable="d" Height="76" Width="112">
 
 
-    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+    <Border >
         <Grid>
             <Canvas Margin="26,8,27,7">
 

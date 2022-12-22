@@ -7,9 +7,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="WorkPage">
+
     <Page.Resources>
-       
-        <Style x:Key="DataGridStyle" BasedOn="{StaticResource {x:Type DataGrid}}" TargetType="{x:Type DataGrid}">
+
+        <Style x:Key="DataGridStyle" BasedOn="{StaticResource {x:Type DataGrid}}"  TargetType="{x:Type DataGrid}">
             <Setter Property="HorizontalGridLinesBrush" Value="Lime"></Setter>
             <Setter Property="VerticalGridLinesBrush" Value="Lime"></Setter>
             <Setter Property="Background" Value="Transparent" ></Setter>
@@ -32,7 +33,7 @@
                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 
-           
+
                                         <Thumb Grid.Row="0" x:Name="PART_LeftHeaderGripper" HorizontalAlignment="Right"   >
                                             <Thumb.Style>
                                                 <Style  TargetType="{x:Type Thumb}">
@@ -49,9 +50,9 @@
                                                 </Style>
                                             </Thumb.Style>
                                         </Thumb>
-                                       
 
-  
+
+
                                     </Grid>
                                 </ControlTemplate>
                             </Setter.Value>
@@ -116,15 +117,15 @@
             </Setter>
         </Style>
     </Page.Resources>
+
     <Grid Style="{StaticResource GridStyle}" >
-        
-        <DataGrid x:Name="userDataGrid" Style="{StaticResource DataGridStyle}" Margin="0,0,0,10">
-           
-        </DataGrid>
+
+        <DataGrid   x:Name="userDataGrid"  Style="{StaticResource DataGridStyle}" Margin="0,0,0,10" ItemsSource="{Binding Mode =TwoWay, Path={}}" />
         <Button Margin="0,0,20,20" Width="150" Style="{DynamicResource ButtonStyle}" Content="Save" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Black" Click="Button_Click">
 
         </Button>
-        
+        <TextBox Style="{StaticResource LoginTextBoxStyle}" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
 
     </Grid>
 </Page>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlienAccounting.Workers.tests;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,11 @@ namespace AlienAccounting
     {
         public MainWindow()
         {
+            TestDbController.tableNameChekr();
+            TestDbController.CheckSetUsers();
+            TestDbController.ChecksetData();
             InitializeComponent();
+
             main_frame.NavigationUIVisibility = System.Windows.Navigation.NavigationUIVisibility.Hidden;
 
         }

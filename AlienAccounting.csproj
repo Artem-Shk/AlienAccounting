@@ -64,11 +64,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BodyParts.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="currency.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+    <Compile Include="AlienDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlienDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\DataGridStyleLabotary.xaml.cs">
       <DependentUpon>DataGridStyleLabotary.xaml</DependentUpon>
@@ -76,14 +75,9 @@
     <Compile Include="CustomControls\loadingElem.xaml.cs">
       <DependentUpon>loadingElem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Gender.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\BodyPart.cs" />
+    <Compile Include="Models\SuperModel.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
@@ -93,16 +87,14 @@
     <Compile Include="Pages\WorkPage.xaml.cs">
       <DependentUpon>WorkPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Role.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="Workers\AlienDataWorker.cs" />
     <Compile Include="Workers\CheckModel.cs" />
+    <Compile Include="Workers\DBController.cs" />
     <Compile Include="Workers\DBPreloader.cs" />
+    <Compile Include="Workers\interfaces\IInserter.cs" />
     <Compile Include="Workers\RegisterManager.cs" />
+    <Compile Include="Workers\tests\TestDbController.cs" />
     <Page Include="CustomControls\DataGridStyleLabotary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,16 +121,6 @@
     </Compile>
     <Compile Include="Pages\WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -171,14 +153,19 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DataModel.edmx.diagram">
-      <DependentUpon>DataModel.edmx</DependentUpon>
+    <None Include="AlienDBDataSet.xsc">
+      <DependentUpon>AlienDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AlienDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AlienDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AlienDBDataSet.xss">
+      <DependentUpon>AlienDBDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AlienAccounting.Workers.DbControllerSoul+DBController.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -188,17 +175,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="DataModel.edmx.sql" />
-    <Content Include="DataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DataModel.cs</LastGenOutput>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-    </Content>
     <Resource Include="Pages\8bb28a6366f6b141eb0dfe701ed51300.png" />
     <Resource Include="d0c5c0d841dfe9dcaa1281df6f064b6e.png" />
     <Resource Include="8bb28a6366f6b141eb0dfe701ed51300.png" />
@@ -206,6 +182,8 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\interfaces\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

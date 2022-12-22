@@ -25,32 +25,32 @@ namespace AlienAccounting.Workers
         
 
          
-        public RegisterManager(string login, string password, string confirmed_password)
-        {
+        //public RegisterManager(string login, string password, string confirmed_password)
+        //{
 
-            RegDataContainer.Login = login;
-            RegDataContainer.Password = password;
-            RegDataContainer.Conf_password = confirmed_password;
+        //    RegDataContainer.Login = login;
+        //    RegDataContainer.Password = password;
+        //    RegDataContainer.Conf_password = confirmed_password;
             
-        }
-        public void Register()
-        {   
-            Debug.WriteLine("Register+");
-            User user_obj = new User();
-            user_obj.login = RegDataContainer.Login;
-            user_obj.password = RegDataContainer.Password;
+        //}
+        //public void Register()
+        //{   
+        //    Debug.WriteLine("Register+");
+        //    User user_obj = new User();
+        //    user_obj.login = RegDataContainer.Login;
+        //    user_obj.password = RegDataContainer.Password;
 
-            RegDataContainer.data_worker.Add_User_data(user_obj);
-
-
-            foreach (User elem in RegDataContainer.data_worker.UserSet.ToList())
-            {
-                Debug.WriteLine("please check data");
-                Debug.WriteLine(elem.login, " and ", elem.password);
-            };
+        //    RegDataContainer.data_worker.Add_User_data(user_obj);
 
 
-        }
+        //    foreach (User elem in RegDataContainer.data_worker.UserSet.ToList())
+        //    {
+        //        Debug.WriteLine("please check data");
+        //        Debug.WriteLine(elem.login, " and ", elem.password);
+        //    };
+
+
+        //}
 
 
         
@@ -81,31 +81,31 @@ namespace AlienAccounting.Workers
         //    }
         //}
         
-        public string Check_passsword(string password, string confirmed_password)
-        {
-            Debug.WriteLine("check succes");
-            if (String.Compare(password,confirmed_password)!=0)
-            {
-                return "ConfPassError";
-            }
-            else
-            {
-                Debug.WriteLine(password+" "+ confirmed_password);
-                return null;
-            }
+        //public string Check_passsword(string password, string confirmed_password)
+        //{
+        //    Debug.WriteLine("check succes");
+        //    if (String.Compare(password,confirmed_password)!=0)
+        //    {
+        //        return "ConfPassError";
+        //    }
+        //    else
+        //    {
+        //        Debug.WriteLine(password+" "+ confirmed_password);
+        //        return null;
+        //    }
 
-        }
+        //}
 
-        public  string Check_UserDs(string login)
-        {
-            Debug.WriteLine("login eror");
-            if (RegDataContainer.data_worker.By_login(login) != null)
-            {
-                return "Login_same_eror";
-            }
+        //public  string Check_UserDs(string login)
+        //{
+        //    Debug.WriteLine("login eror");
+        //    if (RegDataContainer.data_worker.By_login(login) != null)
+        //    {
+        //        return "Login_same_eror";
+        //    }
                 
-            return "ok";
-        }
+        //    return "ok";
+        //}
 
     }
 }
