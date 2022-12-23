@@ -25,14 +25,11 @@ namespace AlienAccounting.Pages
     public partial class WorkPage : Page
     {
 
-        private DBController dBController
+        public DBController dBController
         {
             get; set;
         } = new DBController();
 
-        public List<User> UserModel { get {
-                return dBController.Users;
-            } set { } } 
 
     
 
@@ -40,14 +37,10 @@ namespace AlienAccounting.Pages
 
         public WorkPage()
         {
-
-            InitializeComponent();
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
             
+            InitializeComponent();
+            this.DataContext = new DBController();
+
         }
     }
 }

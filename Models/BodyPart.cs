@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlienAccounting.Models
 {
-    internal class BodyPart:SuperModel
+    public class BodyPart:SuperModel
     {
         public string Name {get;set;}
         public int UserId { get;set;}
