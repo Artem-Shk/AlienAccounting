@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlienAccounting.Models;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -40,16 +41,24 @@ namespace AlienAccounting.Workers.tests
         public static void ChecksetData()
         {
             DBController s = new DBController();
-            if (s.SetsData() == "fuck ya")
+            if (s.SetsUserData(new User("log", "pass", "email")) == "fuck ya")
             {
                 Debug.WriteLine("Good Set Data good");
-            }
+            } 
             else {
                 Debug.WriteLine("you in setData shit Johnny");
             
             };
           
 
+        }
+        public static void CheckUserLogs()
+        {
+            DBController s = new DBController();
+            if(s.takeLoginUsers() != null)
+            {
+                Debug.WriteLine("logs are taked");
+            }
         }
 
         public static void CheckSetUsers()

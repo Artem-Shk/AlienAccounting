@@ -5,16 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AlienAccounting"
         mc:Ignorable="d"
-        ResizeMode="NoResize"
+
         Title="MainWindow" Height="450" Width="800">
         
     <Grid>
         <Frame  x:Name="main_frame"
                 Source="/Pages/WelcomePage.xaml"
                 NavigationUIVisibility="Hidden" 
-                >
+                />
 
-        </Frame>
-        
     </Grid>
 </Window>

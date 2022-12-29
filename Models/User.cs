@@ -20,11 +20,21 @@ namespace AlienAccounting.Models
             Password = password;
             Email = email;
         }
-        public  List<object> ToList()
+        /// <summary>
+        /// returns dict with key like params and values of object 
+        /// 
+        /// </summary>
+        /// <returns>Dictionary<string,Object></string,object> </returns>
+        public override Dictionary<string,object> ToDict()
         {
-
-            return base.ToList(new List<object>() { Login,Password,Email});
+            return new Dictionary<string, object>()
+            {
+                {"Login",this.Login},
+                {"Password",this.Password},
+                {"Email",this.Email},
+            };
         }
+     
 
     }
 }

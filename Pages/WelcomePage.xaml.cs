@@ -30,8 +30,11 @@ namespace AlienAccounting
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
+            //TODO write mvvm Navigation
             //this.NavigationService.Navigate(new AuthPage());
-            this.NavigationService.Navigate(new WorkPage());
+            this.NavigationService.Navigate(new AiPage());
+            //this.NavigationService.Navigate(new WorkPage());
         }
     }
 }
