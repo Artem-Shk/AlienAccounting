@@ -3,7 +3,11 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+<<<<<<< HEAD
       xmlns:local="clr-namespace:AlienAccounting.Pages" xmlns:workers="clr-namespace:AlienAccounting.Workers" d:DataContext="{d:DesignInstance Type=workers:UiConroller}"
+=======
+      xmlns:local="clr-namespace:AlienAccounting.Pages"
+>>>>>>> d66054f7e8cfc9933d9cdfb9626a9684f28a3ea2
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AiPage">
@@ -14,8 +18,13 @@
             <RowDefinition Height="24*"/>
             <RowDefinition Height="11*"/>
         </Grid.RowDefinitions>
+<<<<<<< HEAD
         <Image HorizontalAlignment="Left" Height="166" Margin="555,83,0,0" VerticalAlignment="Top" Width="144" Source="/images/Jn3rijvly4Y.jpg" Stretch="Fill"/>
         <Image HorizontalAlignment="Left" Height="168" Margin="94,83,0,0" VerticalAlignment="Top" Width="144" Source="/images/Selfi.jpg" Stretch="Fill"/>
+=======
+        <Image HorizontalAlignment="Left" Height="166" Margin="555,83,0,0" VerticalAlignment="Top" Width="144" Source="/Pages/Selfi.jpg" Stretch="Fill"/>
+        <Image HorizontalAlignment="Left" Height="168" Margin="94,83,0,0" VerticalAlignment="Top" Width="144" Source="/Pages/Jn3rijvly4Y.jpg" Stretch="Fill"/>
+>>>>>>> d66054f7e8cfc9933d9cdfb9626a9684f28a3ea2
         <Label   Content="Label" HorizontalAlignment="Left" Margin="147,265,0,0" VerticalAlignment="Top" Foreground="Lime"/>
         <Label   Content="Label" HorizontalAlignment="Left" Margin="605,265,0,0" VerticalAlignment="Top" Foreground="Lime"/>
         <TextBox HorizontalAlignment="Left" Margin="106,296,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.503,0.448"/>

@@ -8,9 +8,9 @@ namespace AlienAccounting.Models
 {
     public abstract class SuperModel
     {
-        public virtual List<object> ToList(List<object> list)
+        public virtual Dictionary<string, object> ToDict()
         {
-            return list;
+            return new Dictionary<string, object>();
         }
     }
 }

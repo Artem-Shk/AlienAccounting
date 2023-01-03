@@ -150,16 +150,16 @@
 
     <Grid Style="{StaticResource GridStyle}" >
 
-        <DataGrid   x:Name="userDataGrid"  Style="{StaticResource DataGridStyle}" Margin="0,38,0,0" ItemsSource="{Binding dBController.Users, ElementName=Work}" d:ItemsSource="{d:SampleData ItemCount= 15}"   >
+        <DataGrid   x:Name="userDataGrid"  Style="{StaticResource DataGridStyle}" Margin="0,38,0,0" ItemsSource="{Binding DataContext.Users, ElementName=Work}" d:ItemsSource="{d:SampleData ItemCount= 15}"   >
             <DataGrid.RowDetailsTemplate>
                 <DataTemplate>
-                    <DataGrid AutoGenerateColumns="True" Style="{StaticResource DataGridStyle}" ItemsSource="{Binding dBController.Users , ElementName=Work}">
+                    <DataGrid AutoGenerateColumns="True" Style="{StaticResource DataGridStyle}" ItemsSource="{Binding DataContext.BodyParts , ElementName=Work}">
                      
                     </DataGrid>
                 </DataTemplate>
             </DataGrid.RowDetailsTemplate>
         </DataGrid>
-        <Button Margin="0,0,20,20" Width="150" Style="{DynamicResource ButtonStyle}" Content="Save" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Black" Click="Button_Click">
+        <Button Margin="0,0,20,20" Width="150" Style="{DynamicResource ButtonStyle}" Content="Save" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Black" >
 
         </Button>
         <TextBox Style="{StaticResource LoginTextBoxStyle}" HorizontalAlignment="Center" Margin="0,5,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>

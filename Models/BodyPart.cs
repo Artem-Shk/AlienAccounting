@@ -14,9 +14,13 @@ namespace AlienAccounting.Models
             Name = name;
             UserId = user_id;
         }
-        public List<object> ToList()
+        public override Dictionary<string,object> ToDict()
         {
-            return base.ToList(new List<object>() { Name, UserId});
+            return new Dictionary<string, object>()
+            {
+                {"Name",this.Name},
+                {"UserId",this.UserId},
+            };
         }
     }
 }

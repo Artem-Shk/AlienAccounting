@@ -22,14 +22,17 @@ namespace AlienAccounting
     {
         public MainWindow()
         {
-            TestDbController.tableNameChekr();
-            TestDbController.CheckSetUsers();
-            TestDbController.ChecksetData();
+            //TestDbController.tableNameChekr();
+            //TestDbController.CheckSetUsers();
+            //TestDbController.ChecksetData();
+            //TestDbController.CheckUserLogs();
             InitializeComponent();
 
             main_frame.NavigationUIVisibility = System.Windows.Navigation.NavigationUIVisibility.Hidden;
+            
 
         }
-       
+        
+
     }
 } 
