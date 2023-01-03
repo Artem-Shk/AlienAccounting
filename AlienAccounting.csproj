@@ -90,6 +90,7 @@
     <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="Workers\AlienDataWorker.cs" />
     <Compile Include="Workers\CheckModel.cs" />
+    <Compile Include="Workers\CvWorkers\CvWorker.cs" />
     <Compile Include="Workers\DBController.cs" />
     <Compile Include="Workers\DBPreloader.cs" />
     <Compile Include="Workers\interfaces\IInserter.cs" />
@@ -164,6 +165,7 @@
     <None Include="AlienDBDataSet.xss">
       <DependentUpon>AlienDBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="images\lbfmodel.yaml" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\AlienAccounting.Workers.DbControllerSoul+DBController.datasource" />
     <None Include="Properties\Settings.settings">
@@ -175,15 +177,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pages\8bb28a6366f6b141eb0dfe701ed51300.png" />
-    <Resource Include="d0c5c0d841dfe9dcaa1281df6f064b6e.png" />
-    <Resource Include="8bb28a6366f6b141eb0dfe701ed51300.png" />
+    <Resource Include="images\d0c5c0d841dfe9dcaa1281df6f064b6e.png" />
+    <Resource Include="images\8bb28a6366f6b141eb0dfe701ed51300.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\Jn3rijvly4Y.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lbpcascade_frontalface_improved.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\Selfi.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

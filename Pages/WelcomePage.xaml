@@ -14,7 +14,7 @@
             <RowDefinition Height="11*"/>
         </Grid.RowDefinitions>
 
-        <Image Height="82" Margin="0,72,0,0" VerticalAlignment="Top" Width="236" Stretch="UniformToFill" Source="/d0c5c0d841dfe9dcaa1281df6f064b6e.png" StretchDirection="UpOnly" HorizontalAlignment="Center" OpacityMask="Black"/>
+        <Image Height="82" Margin="0,72,0,0" VerticalAlignment="Top" Width="236" Stretch="UniformToFill" Source="/Pages/d0c5c0d841dfe9dcaa1281df6f064b6e.png" StretchDirection="UpOnly" HorizontalAlignment="Center" OpacityMask="Black"/>
         <Button Style="{DynamicResource ButtonStyle}"  Content="Enter" HorizontalAlignment="Center" Margin="0,10,0,10" Width="100" RenderTransformOrigin="0.501,0.483"    ClipToBounds="True" Grid.Row="1" Click="Button_Click"/>
     </Grid>
 </Page>
